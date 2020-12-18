@@ -11,31 +11,22 @@ console.log(randomString)
 
 
 
-
-
-
-
 //alphabet buttons
 
 const abcArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-let buttons = function () {
-    myButtons = document.getElementById('#abcButtons');
-    letters = document.createElement('ul');
-    for (let i = 0; i < abcArray.length; i++) {
-        letters.id = 'abcs';
-        list = document.createElement('li');
-        list.id = 'letter';
-        list.innerHTML = abcs[i];
-        check();
-        myButtons.appendChild(letters);
-        letters.appendChild(list);
-    }
-}
-console.log(myButtons)
 
+const abcButtons = document.getElementsByClassName('abcButtons')
+
+
+
+// const buttons = makeABC() {
+//     abcButtons = document.getElementById('#abcButtons')
+// }
+
+console.log(abcButtons)
 
 
 // let buttons = function() {
