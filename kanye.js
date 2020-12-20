@@ -35,15 +35,7 @@ function printBlanks() {  //need to change for argument to point to spiced array
 printBlanks()
 
 
-
-
-
-
-
-
 //alphabet buttons
-
-
 const abcButtons = document.getElementsByClassName('abcButtons')
 
 function printBtn() {
@@ -58,6 +50,8 @@ printBtn()
 
 
 console.log(abcButtons)
+
+//making buttons listen for and select items from randomString on click
 
 
 // let buttons = function() {
