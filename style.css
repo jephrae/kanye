@@ -1,8 +1,23 @@
 h1{
     color: darkcyan;
+    text-shadow: 2px 1px rgba(0,0,0,60)
 }
 
 body{
     background-color: darksalmon;
 }
 
+button{
+    background-color: darkcyan;
+    padding: 6px;
+    margin: 3px;
+    border: 2px;
+    border-color:aliceblue;
+    border-radius: 8px;
+    color:white;
+}
+
+h2{
+    display:flex;
+    opacity: 1;
+}
