@@ -1,3 +1,5 @@
+
+
 //string storage
 const kanyeStrings = [
     ['I wish I had a friend like me'],
@@ -14,6 +16,7 @@ const abcArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
 
 let randomString = kanyeStrings[Math.floor(Math.random() * kanyeStrings.length)];
 console.log(randomString)
+
 // taking the characters out of random string, with the spaces
 
 
@@ -22,10 +25,10 @@ const stringBlanks = document.getElementsByClassName('blankString')
 console.log(stringBlanks)
 
 function printBlanks() {  //need to change for argument to point to spiced array made from randomstring
-    for (let i = 0; i < abcArray.length; i++) {
-       let blank = document.createElement("_");
-       let t = document.createTextNode(randomString);
-       blank.appendChild(t);
+    for (let i = 0; i < randomString.length; i++) {
+       let blank = document.createElement("h2");
+       let blanks = document.createTextNode(randomString);
+       blank.appendChild(blanks);
        document.body.appendChild(blank);
     }
 }
@@ -54,7 +57,6 @@ function printBtn() {
 printBtn()
 
 
-
 console.log(abcButtons)
 
 
@@ -81,3 +83,4 @@ const stringSpaces = 0
 
 
 //turn counter for now
+
