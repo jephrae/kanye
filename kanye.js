@@ -20,16 +20,13 @@ console.log(str)
 
 let underScore =[];
 
-
+//makes underscores and shits them out on the dom, does by reading underScore Array
 function makeUnderscores(){
     for (let i = 0; i<str[0].length; i++){
         underScore.push('_');
         document.getElementById('blanks').innerHTML = underScore.join(' ')
     }console.log(underScore)
 }
-
-
-
 makeUnderscores()
 
 
@@ -41,7 +38,7 @@ const abcArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
 
 
 const abcButtons = document.getElementsByClassName('abcButtons')
-
+//makes the buttoms show up on page via dom, makes button for each element of abcArray
 function printBtn() {
     for (let i = 0; i < abcArray.length; i++) {
        let button = document.createElement("button");
