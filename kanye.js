@@ -11,67 +11,87 @@ const abcArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-// //lives counter
-// let lives = 7
+//lives counter
+let lives = 7 //chances at the guess
+let guessed = [] //where guesses go, an empty array
+let correct = '' //holder for correct guesses
+let wordStatus = null; //holder for the 'score' of the word
 
-
-// //getting random string from array string storage
-// let randomString = kanyeStrings[Math.floor(Math.random() * kanyeStrings.length)];
-// console.log(randomString)
-
-// //showing random string
-// // const stringBlanks = document.getElementsByClassName('blankString')
-// // console.log(stringBlanks)
-
-// function printBlanks() {  //need to change for argument to point to spiced array made from randomstring
-//     for (let i = 0; i < randomString.length; i++) {
-//        let blank = document.createElement("h2");
-//        let blanks = document.createTextNode(randomString);
-//        blank.appendChild(blanks);
-//        document.body.appendChild(blank);
-//     }
-// }
-// printBlanks()
-
-
-// //alphabet buttons
-// const abcButtons = document.getElementsByClassName('abcButtons')
-
-// function printBtn() {
-//     for (let i = 0; i < abcArray.length; i++) {
-//        let button = document.createElement("button");
-//        let t = document.createTextNode(abcArray[i]);
-//        button.id = abcArray[i];
-//        button.appendChild(t);
-//        document.body.appendChild(button)
-//        document.getElementById;
-//     }
-// }
-// printBtn()
-
-
-// console.log(abcButtons)
-
-// //making buttons listen for and select items from randomString on click
-
-// // abcButtons.addEventListener('click',()=> {
-// //     if (lives >0){  
-// //         lives -=1;
-// // console.log(lives)
-// //     }else if (lives == 0)
-// //     console.log(gameOver)
-// // })
+//getting random string from array string storage
+function randomString() {
+    correct = kanyeStrings[Math.floor(Math.random() * kanyeStrings.length)];
+}
+randomString()
+//showing random string
+console.log(correct)
 
 
 
-// //populating sentence spaces
-// const stringSpaces = 0
+//alphabet buttons
+const abcButtons = document.getElementsByClassName('abcButtons')
+
+function printBtn() {
+    for (let i = 0; i < abcArray.length; i++) {
+       let button = document.createElement("button");
+       let t = document.createTextNode(abcArray[i]);
+       button.id = abcArray[i] ;
+       button.appendChild(t);
+       document.body.appendChild(button).className += 'abcBtn'
+    //    document.getElementById('buttons').className ='abcbtns';
+    //    onclick = handleGuess(abcArray[i]);
+    
+    }
+}
+
+
+
+printBtn()
+//handles clicks on abc buttons and checks against lives, and if letters present in string
+function handleGuess(chosenLetter){
+    guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
+    document.getElementById(chosenLetter).setAttribute('disabled', true);
+    
+    if (correct.indexOf(chosenLetter) >= 0){
+        guessedWord();
+        checkIfGameWon();
+    } else if (correct.indexOf(chosenLetter) === -1) {
+        mistakes ++
+        updateMistakes();
+        checkIfGameLost();
+
+    }
+}
+printBtn()
+
+//winning changes keyboard to win message
+function checkIfGameWon() {
+    if (wordStatus === answer){
+        document.getElementById('abcButtons').innerHTML = 'YOU WIN!'
+    }
+}
+//losing changes same thing to you lost
+function checkIfGameLost() {
+    if(mistakes === lives) {
+        document.getElementById('holder').innerHTML = `Sorry, the answer was ${randomString}`;
+        document.getElementById('abcButtons').innerHTML = 'YOU LOSE!!'
+    }
+}
+
+
+function guessedWord(){
+    wordStatus = correct.split('').map(letter => (guessed.indexOf(letter) >=0 ? letter : "_")).join('');
+    document.getElementById('holder').innerHTML = wordStatus;
+    console.log(wordStatus)
+}
+guessedWord()
+
+
+//populating sentence spaces
+const stringSpaces = 0
 
 
 
 
-// //alphabet button click functionality
 
 
-//turn counter for now
 
