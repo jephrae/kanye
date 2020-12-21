@@ -11,16 +11,17 @@ const abcArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-//lives counter
+
 let lives = 7 //chances at the guess
 let guessed = [] //where guesses go, an empty array
-let correct = '' //holder for correct guesses
+let correct = ' ' //holder for correct guesses
 let wordStatus = null; //holder for the 'score' of the word
 
 //getting random string from array string storage
 function randomString() {
     correct = kanyeStrings[Math.floor(Math.random() * kanyeStrings.length)];
 }
+
 randomString()
 //showing random string
 console.log(correct)
@@ -37,15 +38,11 @@ function printBtn() {
        button.id = abcArray[i] ;
        button.appendChild(t);
        document.body.appendChild(button).className += 'abcBtn'
-    //    document.getElementById('buttons').className ='abcbtns';
-    //    onclick = handleGuess(abcArray[i]);
-    
     }
 }
-
-
-
 printBtn()
+
+
 //handles clicks on abc buttons and checks against lives, and if letters present in string
 function handleGuess(chosenLetter){
     guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
@@ -61,11 +58,11 @@ function handleGuess(chosenLetter){
 
     }
 }
-printBtn()
+handleGuess()
 
 //winning changes keyboard to win message
 function checkIfGameWon() {
-    if (wordStatus === answer){
+    if (wordStatus === correct){
         document.getElementById('abcButtons').innerHTML = 'YOU WIN!'
     }
 }
@@ -73,7 +70,7 @@ function checkIfGameWon() {
 function checkIfGameLost() {
     if(mistakes === lives) {
         document.getElementById('holder').innerHTML = `Sorry, the answer was ${randomString}`;
-        document.getElementById('abcButtons').innerHTML = 'YOU LOSE!!'
+        document.getElementById('abcBUttons').innerHTML = 'YOU LOSE!!'
     }
 }
 
@@ -87,7 +84,7 @@ guessedWord()
 
 
 //populating sentence spaces
-const stringSpaces = 0
+
 
 
 
