@@ -24,9 +24,10 @@ let underScore =[];
 function makeUnderscores(){
     for (let i = 0; i<str[0].length; i++){
         underScore.push('_');
+        document.getElementById('blanks').innerHTML = underScore.join(' ')
     }console.log(underScore)
-    
 }
+
 
 
 makeUnderscores()
