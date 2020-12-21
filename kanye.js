@@ -20,14 +20,17 @@ console.log(str)
 
 let underScore =[];
 
-let makeUnderscores = () => {
-    for (let i =0; i< str.length; i++) {
+
+function makeUnderscores(){
+    for (let i = 0; i<str[0].length; i++){
         underScore.push('_');
-    }
-        return underScore
+    }console.log(underScore)
+    
 }
+
+
 makeUnderscores()
-console.log(makeUnderscores())
+
 
 
 //keyboard buttons
