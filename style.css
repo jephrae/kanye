@@ -21,3 +21,15 @@ h2{
     display:flex;
     opacity: 1;
 }
+
+    #blanks {
+        display: flex;
+        padding: 6px;
+        font-size:2em;
+}
+
+#lives{
+    padding: 6px;
+    margin:auto;
+    font-size: larger;
+}

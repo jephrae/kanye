@@ -50,3 +50,17 @@ function printBtn() {
 }
 printBtn()
 
+
+//lives and counter for them
+let lives = 7;
+document.getElementById('lives').innerHTML = `Careful! you can only get ${lives} more, wrong`
+
+
+//button make work here:
+
+const keyButton = document.getElementsByClassName('abcBtn');
+keyButton.addEventListener('click',(e)=> {
+    if (lives > 0){
+        console.log('poop')
+    }
+})
