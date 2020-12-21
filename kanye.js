@@ -46,6 +46,14 @@ function printBtn() {
        button.id = abcArray[i] ;
        button.appendChild(t);
        document.getElementById('abcButtons').appendChild(button).className += 'abcBtn'
+       button.addEventListener('click', function(){
+           if(lives >0){
+               console.log('dookie')
+           }
+           else if(lives == 0){
+               console.log('boo')
+           }
+       })
     }
 }
 printBtn()
@@ -58,9 +66,14 @@ document.getElementById('lives').innerHTML = `Careful! you can only get ${lives}
 
 //button make work here:
 
-const keyButton = document.getElementsByClassName('abcBtn');
-keyButton.addEventListener('click',(e)=> {
-    if (lives > 0){
-        console.log('poop')
-    }
-})
+// let keyButtons = document.getElementsByClassName('abcBtn');
+// keyButtons.addEventListener('click')
+// console.log(keyButtons)
+
+
+
+// keyButton.addEventListener('click',(e)=> {
+//     if (lives > 0){
+//         console.log('poop')
+//     }
+// })
