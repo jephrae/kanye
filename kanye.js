@@ -2,9 +2,9 @@
 //string storage
 const kanyeStrings = [
     ['I wish I had a friend like me'],
-    ['My dad got me a drone for Christmas'],
-    ['Fur pillows are hard to actually sleep on'],
-    ['If I got any cooler I would freeze to death']
+    ['My dad got me a drone for christmas'],
+    ['fur pillows are hard to actually sleep on'],
+    // ['If I got any cooler I would freeze to death']
 ]
 
 //getting random quote from the array above
@@ -75,21 +75,24 @@ function printBtn() {
        document.getElementById('abcButtons').appendChild(button).className += 'abcBtn'
        button.addEventListener('click', function(){
            if(lives >0 && strNew.includes(button.id)){
-                for(let i = 0;i< str.length;i++){
-                    console.log(str[i])
-                    console.log(button.id)
+                for(let i = 0;i < str.length;i++){
+                    // console.log(str[i])
+                    // console.log(button.id)
                     if(str[i].toLowerCase()==button.id){
                         underScore[i] = button.id
-            
                     }
                 }
-
-                // underScore[0]= 'a'
                document.getElementById('blanks').innerHTML = underScore.join(' ')
-               console.log('succcess')
+            //    console.log('succcess')
+               answer.push(button.id)
+               console.log(answer)
+               win()
            }
-           else if(lives == 0){
+           else if(lives >0 && !strNew.includes(button.id)){
                console.log('boo')
+               lives --
+               console.log(lives)
+               checkLoss()
            }
        })
     }
