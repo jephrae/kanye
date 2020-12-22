@@ -25,14 +25,14 @@ let answer = [];
 // console.log(typeof strNew)
 // console.log(str)
 
+let underScore =[];
 
 // win function
 
 function win() {
-if (str[0] == underScore[0]){
     console.log('u win')
     document.getElementById('lives').innerHTML = 'YOU WIN!!!'
-    }
+    
 }
 
 // loss function
@@ -44,7 +44,6 @@ if (lives == 0){
 
 //create underscores based on character length
 
-let underScore =[];
 
 //makes underscores and shits them out on the dom, does by reading underScore Array
 function makeUnderscores(){
@@ -80,19 +79,15 @@ function printBtn() {
        button.addEventListener('click', function(){
            if(lives >0 && strNew.includes(button.id)){
                 for(let i = 0;i < str.length;i++){
-                    // console.log(str[i])
-                    // console.log(button.id)
                     if(str[i].toLowerCase()==button.id){
                         underScore[i] = button.id
-                        // win()
+                        console.log(underScore)
                     }
+                } if(!underScore.includes('_')){
+                    win()
                 }
-
-               document.getElementById('blanks').innerHTML = underScore.join(' ')
-           
-               win()
-           }
-           else if(lives >0 && !strNew.includes(button.id)){
+               document.getElementById('blanks').innerHTML = underScore.join(' ') 
+           } else if(lives >0 && !strNew.includes(button.id)){
                console.log('boo')
                lives --
                console.log(lives)
