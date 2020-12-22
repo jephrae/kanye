@@ -1,5 +1,4 @@
 
-
 //string storage
 const kanyeStrings = [
     ['I wish I had a friend like me'],
@@ -16,6 +15,17 @@ function randomString(){
 randomString()
 console.log(str)
 
+//space cleaner and answer array, win prints you win at lives div
+
+let strNew = str[0].replace(/\s/g,'') //test
+let answer = [];
+console.log(strNew)
+if (strNew == answer){
+    document.getElementById('lives').innerHTML = 'YOU WIN!!!'
+}
+
+
+
 //create underscores based on character length
 
 let underScore =[];
@@ -28,6 +38,11 @@ function makeUnderscores(){
     }console.log(underScore)
 }
 makeUnderscores()
+
+
+
+//button function to change shit in the array 
+
 
 
 
@@ -47,7 +62,7 @@ function printBtn() {
        button.appendChild(t);
        document.getElementById('abcButtons').appendChild(button).className += 'abcBtn'
        button.addEventListener('click', function(){
-           if(lives >0){
+           if(lives >0 ){
                console.log('dookie')
            }
            else if(lives == 0){
@@ -64,16 +79,6 @@ let lives = 7;
 document.getElementById('lives').innerHTML = `Careful! you can only get ${lives} more, wrong`
 
 
-//button make work here:
-
-// let keyButtons = document.getElementsByClassName('abcBtn');
-// keyButtons.addEventListener('click')
-// console.log(keyButtons)
 
 
-
-// keyButton.addEventListener('click',(e)=> {
-//     if (lives > 0){
-//         console.log('poop')
-//     }
-// })
+//win criteria
