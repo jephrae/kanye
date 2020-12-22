@@ -2,11 +2,11 @@ let lives = 7;
 
 //string storage
 const kanyeStrings = [
-    ['ab'],
+
     ['I wish I had a friend like me'],
     ['My dad got me a drone for christmas'],
     ['fur pillows are hard to actually sleep on'],
-    // ['If I got any cooler I would freeze to death']
+    ['if I got any cooler I would freeze to death']
 ]
 
 //getting random quote from the array above
