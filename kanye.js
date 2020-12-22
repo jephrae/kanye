@@ -11,20 +11,32 @@ const kanyeStrings = [
 
 function randomString(){
     str = kanyeStrings[Math.floor(Math.random() * kanyeStrings.length)]
+    str = str[0]
 }
 randomString()
 console.log(str)
 
 //space cleaner and answer array, win prints you win at lives div
 
-let strNew = str[0].replace(/\s/g,'') //test
+let strNew = str.replace(/\s/g,'') //test
 let answer = [];
 console.log(strNew)
+console.log(str)
+
+
+// win function
+
+function win() {
 if (strNew == answer){
     document.getElementById('lives').innerHTML = 'YOU WIN!!!'
+    }
 }
-
-
+// loss function
+function checkLoss(){
+if (lives == 0){
+    document.getElementById('lives').innerHTML = 'YOU LOSE!!!!!'
+    }
+}
 
 //create underscores based on character length
 
@@ -32,16 +44,16 @@ let underScore =[];
 
 //makes underscores and shits them out on the dom, does by reading underScore Array
 function makeUnderscores(){
-    for (let i = 0; i<str[0].length; i++){
+    for (let i = 0; i<str.length; i++){
+        if(str[i]=== ' '){
+            underScore.push('&nbsp;')
+        } else {
         underScore.push('_');
+        }
         document.getElementById('blanks').innerHTML = underScore.join(' ')
     }console.log(underScore)
 }
 makeUnderscores()
-
-
-
-//button function to change shit in the array 
 
 
 
@@ -62,8 +74,19 @@ function printBtn() {
        button.appendChild(t);
        document.getElementById('abcButtons').appendChild(button).className += 'abcBtn'
        button.addEventListener('click', function(){
-           if(lives >0 ){
-               console.log('dookie')
+           if(lives >0 && strNew.includes(button.id)){
+                for(let i = 0;i< str.length;i++){
+                    console.log(str[i])
+                    console.log(button.id)
+                    if(str[i].toLowerCase()==button.id){
+                        underScore[i] = button.id
+            
+                    }
+                }
+
+                // underScore[0]= 'a'
+               document.getElementById('blanks').innerHTML = underScore.join(' ')
+               console.log('succcess')
            }
            else if(lives == 0){
                console.log('boo')
@@ -79,6 +102,18 @@ let lives = 7;
 document.getElementById('lives').innerHTML = `Careful! you can only get ${lives} more, wrong`
 
 
+// function handleGuess(button) {
+//     strNew.indexOf(button) === -1 ? strNew.push(button) : null;
+//     document.getElementById(button).setAttribute('disabled', true);
 
+//     if(strNew.indexOf(chosenLetter) >= 0){
+//         // guessedWord();
+//         win();
+//     } else if (strNew.indexOf(chosenLetter)=== -1){
+//         lives -1;
+//         checkLoss();
 
-//win criteria
+//     }
+
+// }
+
