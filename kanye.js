@@ -1,6 +1,8 @@
+let lives = 7;
 
 //string storage
 const kanyeStrings = [
+    ['ab'],
     ['I wish I had a friend like me'],
     ['My dad got me a drone for christmas'],
     ['fur pillows are hard to actually sleep on'],
@@ -20,17 +22,19 @@ console.log(str)
 
 let strNew = str.replace(/\s/g,'') //test
 let answer = [];
-console.log(strNew)
-console.log(str)
+// console.log(typeof strNew)
+// console.log(str)
 
 
 // win function
 
 function win() {
-if (strNew == answer){
+if (str[0] == underScore[0]){
+    console.log('u win')
     document.getElementById('lives').innerHTML = 'YOU WIN!!!'
     }
 }
+
 // loss function
 function checkLoss(){
 if (lives == 0){
@@ -80,43 +84,25 @@ function printBtn() {
                     // console.log(button.id)
                     if(str[i].toLowerCase()==button.id){
                         underScore[i] = button.id
+                        // win()
                     }
                 }
+
                document.getElementById('blanks').innerHTML = underScore.join(' ')
-            //    console.log('succcess')
-               answer.push(button.id)
-               console.log(answer)
+           
                win()
            }
            else if(lives >0 && !strNew.includes(button.id)){
                console.log('boo')
                lives --
                console.log(lives)
+               document.getElementById('lives').innerHTML = `Careful! you can only get ${lives} more, wrong!`
+               checkLoss()
+           } else if(lives == 0){
                checkLoss()
            }
        })
     }
 }
 printBtn()
-
-
-//lives and counter for them
-let lives = 7;
-document.getElementById('lives').innerHTML = `Careful! you can only get ${lives} more, wrong`
-
-
-// function handleGuess(button) {
-//     strNew.indexOf(button) === -1 ? strNew.push(button) : null;
-//     document.getElementById(button).setAttribute('disabled', true);
-
-//     if(strNew.indexOf(chosenLetter) >= 0){
-//         // guessedWord();
-//         win();
-//     } else if (strNew.indexOf(chosenLetter)=== -1){
-//         lives -1;
-//         checkLoss();
-
-//     }
-
-// }
 
