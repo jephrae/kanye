@@ -16,7 +16,7 @@ function randomString(){
     str = str[0]
 }
 randomString()
-console.log(str)
+// console.log(str)
 
 //space cleaner and answer array, win prints you win at lives div
 
@@ -55,7 +55,7 @@ function makeUnderscores(){
         underScore.push('_');
         }
         document.getElementById('blanks').innerHTML = underScore.join(' ')
-    }console.log(underScore)
+    }//console.log(underScore)
 }
 makeUnderscores()
 
@@ -83,7 +83,7 @@ function printBtn() {
                 for(let i = 0;i < str.length;i++){
                     if(str[i].toLowerCase()==button.id){
                         underScore[i] = button.id
-                        console.log(underScore)
+                        // console.log(underScore)
                     }
                 } if(!underScore.includes('_')){
                     document.getElementById('pic').innerHTML = `<img src='img/winner.gif'> </img>`
@@ -91,9 +91,9 @@ function printBtn() {
                 }
                document.getElementById('blanks').innerHTML = underScore.join(' ') 
            } else if(lives >0 && !strNew.includes(button.id)){
-               console.log('boo')
+            //    console.log('boo')
                lives --
-               console.log(lives)
+            //    console.log(lives)
                document.getElementById('lives').innerHTML = `Careful! you can only get ${lives} more, wrong!`
                document.getElementById('pic').innerHTML = `<img src='img/kanye${lives}.png'> </img>`
                checkLoss()
