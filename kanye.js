@@ -92,6 +92,7 @@ function printBtn() {
                lives --
                console.log(lives)
                document.getElementById('lives').innerHTML = `Careful! you can only get ${lives} more, wrong!`
+               document.getElementById('pic').innerHTML = `<img src='img/kanye${lives}.png'> </img>`
                checkLoss()
            } else if(lives == 0){
                checkLoss()
