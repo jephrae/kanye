@@ -39,6 +39,7 @@ function win() {
 function checkLoss(){
 if (lives == 0){
     document.getElementById('lives').innerHTML = 'YOU LOSE!!!!!'
+    document.getElementById('pic').innerHTML = `<img src='img/kanye0.gif'></img>`
     }
 }
 
