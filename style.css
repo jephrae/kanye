@@ -1,33 +1,32 @@
 h1{
-    color: darkcyan;
-    text-shadow: 2px 1px rgba(0,0,0,60)
+    color: #015249;
+    text-shadow: 1px 1px rgba(0,0,0,60)
 }
 
 body{
-    background-color: darksalmon;
+    background-color: #A5A5AF;
 }
 
 button{
-    background-color: darkcyan;
+    background-color: #015249;
     padding: 6px;
     margin: 3px;
     border: 2px;
     border-color:aliceblue;
     border-radius: 8px;
-
-    color:white;
+    color: #57BC90;
+    font-size: 1em;
 }
 
-h2{
-    display:flex;
-    opacity: 1;
-}
+
 
 #blanks {
         display: flex;
         padding: 6px;
         font-size:2em;
         text-align: center;
+        color: #015249
+        
 }
 
 
@@ -39,5 +38,10 @@ h2{
 
 #pic{
     display: flex;
-    align-items: right;
+    align-items: center;
+}
+
+img {
+    width: 300px;
+    margin: auto;
 }

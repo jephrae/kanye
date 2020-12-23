@@ -77,7 +77,8 @@ function printBtn() {
        button.id = abcArray[i] ;
        button.appendChild(t);
        document.getElementById('abcButtons').appendChild(button).className += 'abcBtn'
-       button.addEventListener('click', function(){
+       button.addEventListener('click', function(event){
+           event.preventDefault
            if(lives >0 && strNew.includes(button.id)){
                 for(let i = 0;i < str.length;i++){
                     if(str[i].toLowerCase()==button.id){
