@@ -1,5 +1,5 @@
 let lives = 7;
-
+document.getElementById('pic').innerHTML = `<img src='img/kanye${lives}.png'> </img>`
 //string storage
 const kanyeStrings = [
 
@@ -85,6 +85,7 @@ function printBtn() {
                         console.log(underScore)
                     }
                 } if(!underScore.includes('_')){
+                    document.getElementById('pic').innerHTML = `<img src='img/winner.gif'> </img>`
                     win()
                 }
                document.getElementById('blanks').innerHTML = underScore.join(' ') 
