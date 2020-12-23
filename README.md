@@ -26,3 +26,8 @@ Wireframes:
 ![7b466a00-4047-11eb-9833-22715caa7322](https://media.git.generalassemb.ly/user/32278/files/100bf600-4494-11eb-899d-f38ad4ac498b)
 
 
+Unresolved problems: I couldn't get my strech goal of API working. Also the blanks dont break to the right line on smaller screens. 
+
+Project Link: https://jephrae.github.io/kanye/
+
+Project Repo Link: https://github.com/jephrae/kanye
